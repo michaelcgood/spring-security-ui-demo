@@ -23,7 +23,7 @@ public class XACMLWebSecurityExpressionHandler extends DefaultWebSecurityExpress
      * The use of 'new' to create the XACMLSecurityExpressionRoot instance will not work
      * because it will not be visible to the Spring Security framework and hence all autowiring etc.
      * will not be available to the instance.
-     * <p>
+     * 
      * Use the method below instead.
      */
     protected SecurityExpressionOperations createSecurityExpressionRoot(Authentication authentication, FilterInvocation fi) {

@@ -68,18 +68,18 @@ public class XACMLWebSecurityExpressionRoot extends AbstractXACMLWebSecurityExpr
 	 */
 	@Override
 	public void uiDecisionSetDefaultAttributes() {
-		// TODO Add default attributes for decisions related to UI elements access
+		// Add default attributes for decisions related to UI elements access
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		attrCatAry.add("SUBJECT");
 		attrTypeAry.add("INTEGER");
 		attrIdAry.add("com.axiomatics.seniority");
-		Integer userId = null;
+		Integer seniority = null;
 		try {
-			userId = userRepository.findByEmail(auth.getName()).getSeniority();
+			seniority = userRepository.findByEmail(auth.getName()).getSeniority();
 		} catch (Exception e) {
 			log.info(e.toString());
 		}
-		attrValAry.add(userId);
+		attrValAry.add(seniority);
 		log.info("UI DECISION SET DEFAULT ATTRIBUTE WORKING...");
 
 	}
